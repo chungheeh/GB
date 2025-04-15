@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #87A96B;
+    --secondary-color: #F7C242;
+    --background-color: #FAF3E0;
+    --text-color: #333;
+    --border-radius: 25px;
+    --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--background-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--background-color);
+}
+
+.question-card {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 750px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.header-center {
+    flex: 1;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.back-button span {
+    margin-top: 2px;
+}
+
+.back-button:hover {
+    background-color: rgba(135, 169, 107, 0.1);
+}
+
+.settings-button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-button svg {
+    width: 28px;
+    height: 28px;
+}
+
+.settings-button:hover {
+    background-color: rgba(135, 169, 107, 0.1);
+    transform: rotate(30deg);
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.question-input {
+    width: 100%;
+    min-height: 150px;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    resize: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    background-color: #f9f9f7;
+}
+
+.question-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #f5ffe0;
+}
+
+.question-input::placeholder {
+    color: #aaa;
+}
+
+.voice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.mic-button {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.mic-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mic-button.listening {
+    background-color: #ff6b6b;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 107, 107, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    }
+}
+
+.mic-icon {
+    color: #333;
+}
+
+.mic-button.listening .mic-icon {
+    color: white;
+}
+
+.voice-prompt {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.submit-button {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #6a8a53;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .question-input {
+        min-height: 120px;
+        font-size: 1rem;
+    }
+    
+    .mic-button {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .voice-prompt {
+        font-size: 1rem;
+    }
+    
+    .submit-button {
+        font-size: 1.3rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .question-card {
+        min-height: calc(100vh - 2rem);
+        border-radius: 15px;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .content {
+        padding: 1.5rem;
+    }
+    
+    .question-input {
+        min-height: 100px;
+    }
+    
+    .mic-button {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .submit-button {
+        font-size: 1.2rem;
+        padding: 0.7rem 1.2rem;
+    }
+} 
